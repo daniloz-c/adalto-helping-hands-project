@@ -1,14 +1,20 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { AspectRatio } from './ui/aspect-ratio';
 
 const Logo = () => {
   return (
     <Link to="/" className="flex items-center">
-      <div className="w-12 h-12 bg-casa-yellow rounded-full flex items-center justify-center text-black font-bold text-lg">
-        ACAN
+      <div className="h-14 w-auto">
+        <AspectRatio ratio={2 / 1} className="flex items-center justify-center">
+          <img 
+            src="/lovable-uploads/6016fe2a-5cbb-4466-86fa-94d749fe7c49.png" 
+            alt="Casa do Adalto - Apoio às crianças com câncer" 
+            className="h-full w-auto object-contain"
+          />
+        </AspectRatio>
       </div>
-      <span className="ml-3 text-xl font-bold text-casa-blue hidden md:block">Casa do Adalto</span>
     </Link>
   );
 };
