@@ -7,7 +7,7 @@ import { AspectRatio } from './ui/aspect-ratio';
 const slides = [
   {
     id: 1,
-    imageSrc: "https://images.unsplash.com/photo-1542736667-069246bdbc6d?auto=format&fit=crop&q=80",
+    imageSrc: "/lovable-uploads/a618962f-bec6-4fe6-b37f-44a25c2919af.png",
     title: "Apoie uma Criança em Tratamento",
     description: "Sua doação transforma vidas e traz esperança para crianças e adolescentes em tratamento contra o câncer.",
     primaryCta: { text: "Doe Agora", href: "/doe" },
@@ -15,7 +15,7 @@ const slides = [
   },
   {
     id: 2,
-    imageSrc: "https://images.unsplash.com/photo-1617450365226-9bf28c04e130?auto=format&fit=crop&q=80",
+    imageSrc: "/lovable-uploads/a8a00bdb-14fb-4c3a-9821-88991ae74cb7.png",
     title: "Sua Doação Transforma Vidas",
     description: "Ajude-nos a proporcionar hospedagem, alimentação e transporte para crianças em tratamento e suas famílias.",
     primaryCta: { text: "Como Ajudar", href: "/como-ajudar" },
@@ -23,7 +23,7 @@ const slides = [
   },
   {
     id: 3,
-    imageSrc: "https://images.unsplash.com/photo-1469571486292-b53601012a8a?auto=format&fit=crop&q=80",
+    imageSrc: "/lovable-uploads/452d060c-2d7b-4f09-9318-5c65ab3516fd.png",
     title: "Conheça a Casa de Apoio",
     description: "Um espaço de acolhimento e cuidado para crianças e adolescentes em tratamento contra o câncer.",
     primaryCta: { text: "Conheça Nossa História", href: "/nossa-historia" },
