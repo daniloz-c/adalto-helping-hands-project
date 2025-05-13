@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Button } from './ui/button';
 
 const DonationSection = () => {
   return (
@@ -11,7 +12,7 @@ const DonationSection = () => {
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-32 h-32 bg-casa-light-yellow rounded-full -z-10"></div>
               <img 
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
+                src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6" 
                 alt="Mãos segurando um coração" 
                 className="w-full h-auto rounded-lg shadow-lg"
               />
@@ -21,30 +22,28 @@ const DonationSection = () => {
           
           {/* Content */}
           <div className="w-full lg:w-2/3">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">DOE AGORA</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">SUA AJUDA É ESSENCIAL - DOE AGORA</h2>
             
             <p className="text-lg text-gray-700 mb-6">
-              Sua doação é fundamental para mantermos nossos projetos em funcionamento. Com ela, conseguimos oferecer alimentação, transporte, apoio psicológico e diversas outras formas de suporte às crianças, adolescentes e suas famílias durante o tratamento contra o câncer.
+              Sua doação contribui diretamente para a alimentação, hospedagem, transporte e bem-estar das crianças e adolescentes em tratamento contra o câncer, assim como suas famílias que vêm de outros municípios para tratamento em Joinville.
             </p>
             
             <p className="text-lg text-gray-700 mb-8">
-              Cada centavo doado é utilizado com responsabilidade e transparência, focando sempre no bem-estar dos nossos assistidos. Você pode fazer a diferença na vida dessas pessoas com uma contribuição de qualquer valor.
+              Cada contribuição, seja grande ou pequena, faz diferença real na vida das famílias acolhidas pela Casa do Adalto. Você pode ajudar com doações financeiras, de alimentos, roupas ou até mesmo com seu tempo como voluntário.
             </p>
             
             <div className="space-y-4">
-              <a 
-                href="/doe"
-                className="btn bg-casa-red hover:bg-casa-red/90 text-white font-bold py-3 px-8 rounded-md w-full sm:w-auto text-center inline-block"
-              >
-                FAÇA SUA DOAÇÃO COM O CARTÃO DE CRÉDITO
-              </a>
+              <Button className="w-full sm:w-auto text-center bg-casa-red hover:bg-casa-red/90" size="lg" asChild>
+                <a href="/doe">
+                  DOE COM CARTÃO DE CRÉDITO
+                </a>
+              </Button>
               
-              <a 
-                href="/como-ajudar"
-                className="btn bg-casa-blue hover:bg-casa-blue/90 text-white font-bold py-3 px-8 rounded-md w-full sm:w-auto text-center inline-block mt-4"
-              >
-                OUTRAS FORMAS DE DOAÇÃO
-              </a>
+              <Button className="w-full sm:w-auto text-center bg-casa-blue hover:bg-casa-blue/90 mt-4" size="lg" asChild>
+                <a href="/como-ajudar">
+                  OUTRAS FORMAS DE DOAR
+                </a>
+              </Button>
             </div>
           </div>
         </div>

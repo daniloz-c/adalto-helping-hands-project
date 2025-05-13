@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { FileText, Users, CalendarDays } from 'lucide-react';
+import { Button } from './ui/button';
 
 interface StatItem {
   id: number;
@@ -11,33 +13,21 @@ interface StatItem {
 const statItems: StatItem[] = [
   {
     id: 1,
-    value: "5.200+",
+    value: "3.800+",
     label: "Atendimentos realizados anualmente",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-casa-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-      </svg>
-    )
+    icon: <Users className="h-12 w-12 text-casa-blue" />
   },
   {
     id: 2,
-    value: "45.000+",
+    value: "36.500+",
     label: "Refeições servidas por ano",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-casa-yellow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3v18h18V3H3zm14 14H7V7h10v10z" />
-      </svg>
-    )
+    icon: <CalendarDays className="h-12 w-12 text-casa-yellow" />
   },
   {
     id: 3,
-    value: "120+",
-    label: "Eventos e atividades recreativas",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-casa-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-      </svg>
-    )
+    value: "4.200+",
+    label: "Transportes para hospitais e clínicas",
+    icon: <FileText className="h-12 w-12 text-casa-red" />
   }
 ];
 
@@ -45,6 +35,10 @@ const ImpactSection = () => {
   return (
     <section className="py-16 bg-white">
       <div className="container">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
+          NOSSO IMPACTO EM NÚMEROS
+        </h2>
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {statItems.map((item) => (
             <div 
@@ -62,18 +56,14 @@ const ImpactSection = () => {
         
         <div className="max-w-3xl mx-auto mt-16 text-center">
           <p className="text-lg text-gray-700 mb-8">
-            O investimento das doações é feito com total transparência. 85% dos recursos são destinados diretamente para as atividades de auxílio às crianças e adolescentes, enquanto 15% são utilizados para a manutenção da estrutura e custos administrativos necessários.
+            Cada gesto de apoio se reflete diretamente no bem-estar das crianças e adolescentes que acolhemos. Sua contribuição faz a diferença em cada sorriso e em cada pequena vitória conquistada durante o tratamento.
           </p>
           
-          <a 
-            href="/transparencia"
-            className="btn bg-black text-white hover:bg-gray-800 inline-flex items-center"
-          >
-            Clique aqui para ver o balanço de 2022
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
+          <Button variant="outline" className="bg-black text-white hover:bg-gray-800 border-none" asChild>
+            <a href="/transparencia">
+              Clique aqui para ver nosso Balanço Social
+            </a>
+          </Button>
         </div>
       </div>
     </section>

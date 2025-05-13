@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Button } from './ui/button';
 
 const AboutSection = () => {
   return (
@@ -7,30 +8,26 @@ const AboutSection = () => {
       <div className="container">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            SOBRE A ORGANIZAÇÃO ASSOCIAÇÃO CASA DO ADALTO
+            NOSSA HISTÓRIA: DO LUTO À ESPERANÇA
           </h2>
           
           <p className="text-lg mb-6">
-            A Associação Casa do Adalto foi fundada em 2005 com o objetivo de acolher e dar suporte a crianças e adolescentes em tratamento contra o câncer, bem como suas famílias. Nossa inspiração veio de Adalto, um jovem que enfrentou a doença com muita coragem e cuja história motivou a criação deste espaço de apoio, acolhimento e esperança.
+            A Associação Casa do Adalto (ACAN) foi fundada em 2002 pela Sra. Noeli Teresinha Chagas, mãe de Adalto, que foi diagnosticado com Neuroblastoma aos 4 anos e faleceu aos 5 anos de idade.
           </p>
           
           <p className="text-lg mb-6">
-            Hoje, atendemos dezenas de famílias mensalmente, oferecendo hospedagem, alimentação, transporte para hospitais, apoio psicológico, atividades recreativas e muito mais. Nossa missão é minimizar o sofrimento durante o tratamento e proporcionar um ambiente acolhedor e humanizado para todos.
+            Sensibilizada pelas dificuldades enfrentadas durante o tratamento do filho e percebendo a necessidade de apoio a outras famílias na mesma situação, especialmente aquelas vindas de outros municípios para tratamento via SUS (TFD – Tratamento Fora de Domicílio), Noeli decidiu transformar sua dor em amor ao próximo.
           </p>
           
           <p className="text-lg mb-8">
-            Trabalhamos com uma equipe de profissionais dedicados e contamos com o apoio essencial de voluntários e doadores, que são fundamentais para a continuidade do nosso trabalho.
+            Hoje, a ACAN acolhe, apoia e orienta crianças e adolescentes com neoplasia e seus acompanhantes, oferecendo alimentação, hospedagem, transporte, roupas, orientação e apoio emocional e social, trazendo dignidade e esperança durante o difícil processo de tratamento.
           </p>
           
-          <a 
-            href="/entidade"
-            className="btn btn-secondary inline-flex items-center"
-          >
-            Clique aqui e saiba mais
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
+          <Button variant="secondary" asChild>
+            <a href="/nossa-historia">
+              Conheça a Trajetória da Sra. Noeli e do Adalto
+            </a>
+          </Button>
         </div>
       </div>
     </section>

@@ -6,6 +6,7 @@ import NewsSection from '../components/NewsSection';
 import DonationSection from '../components/DonationSection';
 import AboutSection from '../components/AboutSection';
 import ImpactSection from '../components/ImpactSection';
+import ServicesSection from '../components/ServicesSection';
 import PartnersSection from '../components/PartnersSection';
 import Footer from '../components/Footer';
 
@@ -18,6 +19,7 @@ const Index = () => {
         <NewsSection />
         <DonationSection />
         <AboutSection />
+        <ServicesSection />
         <ImpactSection />
         <PartnersSection />
       </main>

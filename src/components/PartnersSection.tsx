@@ -1,139 +1,64 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
+import { Card, CardContent } from './ui/card';
 
-interface Partner {
-  id: number;
-  name: string;
-  logoSrc: string;
-}
-
-const partners: Partner[] = [
-  {
-    id: 1,
-    name: "Parceiro 1",
-    logoSrc: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=200&h=100&q=60"
-  },
-  {
-    id: 2,
-    name: "Parceiro 2",
-    logoSrc: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=200&h=100&q=60"
-  },
-  {
-    id: 3,
-    name: "Parceiro 3",
-    logoSrc: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=200&h=100&q=60"
-  },
-  {
-    id: 4,
-    name: "Parceiro 4",
-    logoSrc: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=200&h=100&q=60"
-  },
-  {
-    id: 5,
-    name: "Parceiro 5",
-    logoSrc: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&h=100&q=60"
-  },
-  {
-    id: 6,
-    name: "Parceiro 6",
-    logoSrc: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=200&h=100&q=60"
-  }
+const partners = [
+  { id: 1, name: "Empresa Parceira 1", logo: "https://images.unsplash.com/photo-1472266408199-74dd6f7b632f" },
+  { id: 2, name: "Empresa Parceira 2", logo: "https://images.unsplash.com/photo-1561070791-9cb2e8e8f4ab" },
+  { id: 3, name: "Empresa Parceira 3", logo: "https://images.unsplash.com/photo-1554200876-e522cf1f1f13" },
+  { id: 4, name: "Empresa Parceira 4", logo: "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b" },
+  { id: 5, name: "Empresa Parceira 5", logo: "https://images.unsplash.com/photo-1604079628298-8526cc0710a1" },
+  { id: 6, name: "Empresa Parceira 6", logo: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f" },
+  { id: 7, name: "Empresa Parceira 7", logo: "https://images.unsplash.com/photo-1567095761054-7a02e69e5c43" },
+  { id: 8, name: "Empresa Parceira 8", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9" },
 ];
 
 const PartnersSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const visibleItems = 4; // Number of partners visible at once
-  
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex + 1 >= partners.length ? 0 : prevIndex + 1
-    );
-  };
-  
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex - 1 < 0 ? partners.length - 1 : prevIndex - 1
-    );
-  };
-  
-  const getVisiblePartners = () => {
-    const result = [];
-    for (let i = 0; i < visibleItems; i++) {
-      const index = (currentIndex + i) % partners.length;
-      result.push(partners[index]);
-    }
-    return result;
-  };
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 3000);
-    
-    return () => clearInterval(interval);
-  }, [currentIndex]);
-  
   return (
-    <section className="py-16 bg-casa-gray">
+    <section className="py-16 bg-white">
       <div className="container">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          EMPRESAS PARCEIRAS
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
+          EMPRESAS QUE ABRAÇAM NOSSA CAUSA
         </h2>
         
-        <div className="relative max-w-5xl mx-auto">
-          <div className="overflow-hidden">
-            <div className="flex gap-6 items-center justify-center">
-              {getVisiblePartners().map((partner) => (
-                <div 
-                  key={partner.id}
-                  className="w-full sm:w-1/2 md:w-1/4 p-4 flex items-center justify-center bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <img 
-                    src={partner.logoSrc}
-                    alt={partner.name}
-                    className="max-h-16 max-w-full h-auto object-contain"
-                  />
-                </div>
+        <div className="relative">
+          <Carousel className="w-full" 
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent>
+              {partners.map((partner) => (
+                <CarouselItem key={partner.id} className="md:basis-1/3 lg:basis-1/4">
+                  <Card className="border-none shadow-none">
+                    <CardContent className="flex aspect-square items-center justify-center p-6">
+                      <div className="overflow-hidden rounded-lg bg-white p-2 w-full h-full">
+                        <img
+                          src={partner.logo}
+                          alt={partner.name}
+                          className="h-full w-full object-contain opacity-80 hover:opacity-100 transition-opacity"
+                        />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
               ))}
+            </CarouselContent>
+            <div className="absolute -right-12 top-1/2 -translate-y-1/2">
+              <CarouselPrevious className="hidden md:flex -left-12" />
+              <CarouselNext className="hidden md:flex" />
             </div>
-          </div>
-          
-          {/* Navigation buttons */}
-          <button 
-            className="absolute top-1/2 -left-6 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-casa-gray/80"
-            onClick={prevSlide}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          
-          <button 
-            className="absolute top-1/2 -right-6 transform -translate-y-1/2 p-2 bg-white rounded-full shadow-md hover:bg-casa-gray/80"
-            onClick={nextSlide}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+          </Carousel>
         </div>
         
-        {/* Indicators */}
-        <div className="flex justify-center mt-8 gap-2">
-          {partners.map((_, index) => (
-            <button
-              key={index}
-              className={`h-2 rounded-full transition-all ${
-                index >= currentIndex && index < currentIndex + visibleItems 
-                  ? 'w-8 bg-casa-blue' 
-                  : 'w-2 bg-gray-300'
-              }`}
-              onClick={() => setCurrentIndex(index)}
-            >
-              <span className="sr-only">Slide {index + 1}</span>
-            </button>
-          ))}
-        </div>
+        <p className="text-center mt-10 text-lg text-gray-700">
+          Agradecemos a todas as empresas e instituições que apoiam nosso trabalho. 
+          <a href="/parceiros" className="text-casa-blue font-medium hover:underline ml-2">
+            Seja um parceiro
+          </a>
+        </p>
       </div>
     </section>
   );
