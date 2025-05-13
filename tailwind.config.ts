@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+        // Custom colors for Casa do Adalto
+        'casa-yellow': '#FFC90E',
+        'casa-blue': '#1EAEDB',
+        'casa-red': '#ea384c',
+        'casa-purple': '#9b87f5',
+        'casa-gray': '#f3f3f3',
+        'casa-light-blue': '#D3E4FD',
+        'casa-light-yellow': '#FEF7CD',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +93,36 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+        'slide-in': {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0)' }
+        },
+        'slide-out': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(100%)' }
+        },
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' }
+        },
+        'fade-out': {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' }
+        }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+        'slide-in': 'slide-in 0.5s ease-out',
+        'slide-out': 'slide-out 0.5s ease-out',
+        'fade-in': 'fade-in 0.5s ease-out',
+        'fade-out': 'fade-out 0.5s ease-out'
+			},
+      fontFamily: {
+        'sans': ['Montserrat', 'sans-serif'],
+        'heading': ['Roboto', 'sans-serif'],
+      },
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
